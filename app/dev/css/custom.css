@@ -44,6 +44,22 @@ Reusable Components
     color: #fff;
 }
 
+.circle-icon {
+ 
+}
+
+.ion-location {
+    width: 50px;
+    height: 50px;
+}
+
+.small-icon {
+    color: #8aaad9;
+    font-size: 150%;
+}
+
+
+
 /*-----------------------------------------
 Header section
 ------------------------------------------*/
@@ -57,10 +73,10 @@ header {
 
 .hero-text-box {
     position: absolute;
-    width: 550px;
-    top: 35%;
+    width: 580px;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -35%);
+    transform: translate(-50%, -50%);
 }
 
 .hero-text {
@@ -89,14 +105,30 @@ header {
 .main-nav li a:visited {
     color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 85%;
+    font-size: 90%;
     padding: 8px 0;
-    border-bottom: 2px solid transparent;
+    border-bottom: 3px solid transparent;
     transition: all .2s ease-in-out;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active {
-    border-bottom: 2px solid #8aaad9;
+    border-bottom: 3px solid #8aaad9;
+}
+
+/*-----------------------------------------
+About section
+------------------------------------------*/
+
+.description-text {
+    padding-left: 20px;
+}
+
+.info-list {
+    margin-left: 20px;
+}
+
+.icon-wrapper {
+    margin-left: 30px;
+    margin-bottom: 30px;
 }
