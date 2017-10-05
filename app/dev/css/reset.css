@@ -34,7 +34,8 @@ Reusable Components
 }
 
 h1, 
-h2 {
+h2
+ {
     font-weight: 400;
     letter-spacing: 1px;
     margin-bottom: 20px;
@@ -53,4 +54,11 @@ h2 {
     color: #8aaad9;
     word-spacing: 2px;
 }
+
+h3 {
+    font-weight: 400;
+    word-spacing: 2px;
+    margin-bottom: 20px;
+}
+
 
