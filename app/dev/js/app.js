@@ -3,14 +3,7 @@
 $(document).ready(function(){
     "use strict";
 
-    // typed effect
-    var typed = new Typed("#typed", {
-    stringsElement: '#typed-strings',
-    typeSpeed: 100,
-    backSpeed: 120,
-    loop: true
-    });
-
+/*
     $(window).scroll(function(){
         var top = $(window).scrollTop();
         if(top >= 80) {
@@ -31,69 +24,97 @@ $(document).ready(function(){
 		pagination : false,
 		navigationText: ["<i class='fa fa-arrow-circle-left wow fadeInRight' data-wow-delay='0.55s'></i>","<i class='fa fa-arrow-circle-right wow fadeInRight' data-wow-delay='0.85s'></i>"]
     });
-    
-    // Skill Chart
-    $('#skill-chart').highcharts({
-        title: {
-            text: 'MY SKILLS CHART',
-            style: {
-                fontFamily: "'Exo 2', sans-serif",
-                color: '#00909e',
-                fontSize: '24px'
-            }
-        },
- 
-        xAxis: {
-            labels: {
+    */
+    /****************************************************
+     Skill Charts
+     ****************************************************/
+
+    //Skill chart for core
+    var idCore = 'skill-chart-core';
+    var titleCore = 'My Skills Chart - Core';
+    var categoriesCore = ['C#', 'CSS', 'HTML', 'Java', 'JavaScript','C++', 'Python', 'SQL'];
+    var advancedDataCore = [9, 8, 8, 8, 8, null,null, null];
+    var proficientDataCore = [null, null, null, null, null,6,  6, 7];
+    var noviceDataCore = [null, null, null, null, null, null, null, null];
+    skillChart(idCore, titleCore, categoriesCore, advancedDataCore, proficientDataCore, noviceDataCore);
+
+    //Skill chart for frameworks and libraries
+    var idLib = 'skill-chart-lib';
+    var titleLib = 'My Skills Chart - Frameworks and Libaries';
+    var categoriesLib = ['Angular', 'ASP.NET MVC', 'ASP.NET Web API', 'Bootstrap', 'Entity Framework', 'Foundation','jQuery','Express',  'Knockout.js','Node.js', 'React'];
+    var advancedDataLib = [8, 9, 8, 8, 8, 8, 8, null, null,null,null];
+    var proficientDataLib = [null, null, null, null, null,null, null, 7, 7, 7, 6];
+    var noviceDataLib = [null, null, null, null, null, null,null, null, null,null,null];
+    skillChart(idLib, titleLib, categoriesLib, advancedDataLib, proficientDataLib, noviceDataLib);
+
+    //Skill chart function
+    function skillChart(id, text, categories,advancedData, proficientData, noviceData) {
+
+        $('#' + id).highcharts({
+            title: {
+                text: text,
                 style: {
                     fontFamily: "'Exo 2', sans-serif",
-                    color: '#00909e',
-                    fontSize: '14px'
+                    color: '#8aaad9',
+                    fontSize: '22px'
                 }
             },
-           categories: ['Angular', 'ASP.NET MVC', 'C#', 'CSS', 'Entity Framework', 'Express','HTML', 'JavaScript', 'jQuery', 'LINQ', 'mongoDB', 'Node.js', 'React', 'SQL', 'SQL Sever', 'Web API']
-        },
-
-        yAxis: {
-            title: {
-                text: 'Proficiency Scale',
-                style: {
-                    fontFamily: "'Exo 2', sans-serif",
-                    color: '#FF7A11',
-                    fontSize: '16px'
+     
+            xAxis: {
+                labels: {
+                    style: {
+                        fontFamily: "'Exo 2', sans-serif",
+                        color: '#8aaad9',
+                        fontSize: '16px'
+                    }
+                },
+               categories: categories
+            },
+    
+            yAxis: {
+                title: {
+                    text: 'Proficiency Scale',
+                    style: {
+                        fontFamily: "'Exo 2', sans-serif",
+                        color: '#8aaad9',
+                        fontSize: '16px'
+                    }
                 }
+            },
+    
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                itemStyle: {
+                    fontFamily: "'Exo 2', sans-serif",
+                    fontWeight: 'normal',
+                    fontSize: '16px',
+                    color: '#8aaad9'
+                 }
+            },
+    
+            series: [{
+                name: 'Advanced',
+                color: '#00B233',
+                data: advancedData
+            },{
+                name: 'Proficient',
+                color: '#05FF8C',
+                data: proficientData
+            }, {
+                name: 'Novice',
+                data: noviceData
+            }],
+    
+            credits: {
+                enabled: false
             }
-        },
+        });
+    }
+   
 
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle',
-            itemStyle: {
-                fontFamily: "'Exo 2', sans-serif",
-                fontWeight: 'normal',
-                fontSize: '16px',
-                color: '#FF7A11'
-             }
-        },
-
-        series: [{
-            name: 'Advanced',
-            color: '#00909e',
-            data: [null, 8, 9, 8, 8, null,9, 8, 8, 8, null, null, null, 8, 8, 8]
-        },{
-            name: 'Proficient',
-            color: '#FF7A11',
-            data: [7, null, null, null, null, 7, null, null, null, null, 7, 7, 7,null, null, null]
-        }, {
-            name: 'Novice',
-            data: [null, null, null, null, null, null, null, null, null, null ,null, null, null, null, null, null]
-        }],
-
-        credits: {
-            enabled: false
-        }
-    });
+    
 
     // modal
     $('.modal-open').click(function(e){
