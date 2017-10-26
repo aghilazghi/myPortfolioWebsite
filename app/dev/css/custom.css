@@ -138,6 +138,151 @@ Skill section
 .skill-section{
     background-color: #EFF1F5;
 }
-.skill-list {
-    margin-bottom: 25px;
+
+
+/*-----------------------------------------
+Works section
+------------------------------------------*/
+
+.works-carousel {
+    position: relative;
+}
+
+.works-carousel a {
+    text-decoration: none;
+    color: #555;
+}
+
+.works-carousel .owl-buttons {
+    margin: 0;
+    width: 140px;
+}
+.works-carousel .owl-prev,
+.works-carousel .owl-next {
+    margin: 0 5px;
+    padding: 0;
+    float: left;
+    font-size: 30px;
+    color: #333;
+    text-align: center;
+    position: absolute;
+    top: -100px;
+}
+.works-carousel .owl-prev:hover,
+.works-carousel .owl-next:hover {
+    color: #333;
+}
+.works-carousel .owl-controls .owl-buttons .owl-prev{
+    right: 60px;
+}
+.works-carousel .owl-controls .owl-buttons .owl-next{
+    right: 20px;
+}
+
+.ion-arrow-left-a:link,
+.ion-arrow-left-a:visited,
+.ion-arrow-right-a:link,
+.ion-arrow-right-a:visited {
+    color: #8aaad9;
+}
+
+.ion-arrow-left-a:hover,
+.ion-arrow-left-a:active,
+.ion-arrow-right-a:hover,
+.ion-arrow-right-a:hover {
+    color: #2D82D8;
+}
+
+.portfolio-content {
+    margin-top: 1.5rem;
+    margin-right: 1.175rem;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.portfolio-content .project-title {
+    text-transform: none;
+}
+
+.portfolio-description p, .portfolio-description h2 {
+    padding: 0 1.125rem;
+}
+
+.project-image {
+    border-radius: 12px;
+    border: solid 1px #8aaad9;
+}
+
+.inner-content .project-description {
+    height: 60px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+
+
+/*-----------------------------------------
+Modal
+------------------------------------------*/
+.portfolio-modal {
+    position: fixed;
+    z-index: 5;
+    background-color: rgba(255, 255, 255, .95);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.4);
+    transition: all .3s ease-out;
+}
+
+.portfolio-modal-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.to-be-used-by-modal {
+    display: none;
+}
+
+.modal-close {
+    position: absolute;
+    top: 50px;
+    right: 250px;
+    font-size: 2rem;
+    transform: scaleX(1.5);
+    color: #8aaad9;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #2D82D8;
+    cursor: pointer;
+}
+
+.modal-project-image {
+    border-radius: 12px;
+    border: solid 1px #8aaad9;
+}
+
+.modal-project-tools span:first {
+    padding-left: 0;
+}
+
+.portfolio-modal h2 {
+    text-transform: none;
+    font-size: 150%;
+}
+
+.modal-project-tools span {
+    padding-left: 20px;
+    font-size: 80%;
+}
+
+.tools-bullet {
+    color: #8aaad9;
+    font-size: 90%;
 }

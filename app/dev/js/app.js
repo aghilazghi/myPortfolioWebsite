@@ -15,15 +15,7 @@ $(document).ready(function(){
         }
     });
 
-    // Portfolio Owl Carousel
-	$("#owl-portfolio-carousel").owlCarousel({
-		autoPlay: 3000, //Set AutoPlay to 3 seconds
-		items : 3,
-		stopOnHover : true,
-		navigation : true, // Show next and prev buttons
-		pagination : false,
-		navigationText: ["<i class='fa fa-arrow-circle-left wow fadeInRight' data-wow-delay='0.55s'></i>","<i class='fa fa-arrow-circle-right wow fadeInRight' data-wow-delay='0.85s'></i>"]
-    });
+    
     */
     /****************************************************
      Skill Charts
@@ -114,28 +106,53 @@ $(document).ready(function(){
     }
    
 
+    /****************************************************
+     Works Carousel
+    ****************************************************/
     
+	$("#owl-works-carousel").owlCarousel({
+		autoPlay: 3000, //Set AutoPlay to 3 seconds
+		items : 3,
+		stopOnHover : true,
+		navigation : true, // Show next and prev buttons
+		pagination : false,
+		navigationText: ["<i class='ion-arrow-left-a wow fadeInRight' data-wow-delay='0.55s'></i>","<i class='ion-arrow-right-a wow fadeInRight' data-wow-delay='0.85s'></i>"]
+    });
 
-    // modal
+    /****************************************************
+     Works Details - Modal
+    ****************************************************/
     $('.modal-open').click(function(e){
         e.preventDefault();
 
         var elem = $(this), 
             title = elem.find('.project-title').text(),
-            link = elem.attr('href'),
-            image = elem.find('.project-image').attr('src'),
+            
+            websiteLink = elem.attr('href'),
+            repositoryLink = elem.data("repository"),
             descr = elem.find('.project-description').text(),
             tools = elem.find('.project-tools').html(),
-            details = elem.find('.project-details').html();
-        
+            details = elem.find('.project-details').html(),
+            slides = elem.data('images').split(','),
+            slidesHtml = '';
+
+        for(var i = 0; i < slides.length; i++) {
+            slidesHtml = slidesHtml + '<img src=' + slides[i] + ' class="modal-project-image" width="500" alt="">';
+        }
+
+        console.log(slidesHtml);
+          
         $('.portfolio-modal').addClass("portfolio-modal-visible");
 
         $('.modal-project-title').text(title);
-        $('.btn').attr('href', link);
-        $('.modal-project-image').attr('src', image);
+        $('.btn-full').attr('href', websiteLink);
+        $('.btn-ghost').attr('href', repositoryLink);
+        $('.cycle2-slide-show').html(slidesHtml);
         $('.modal-project-description').text(descr);
         $('.modal-project-tools').html(tools);
         $('.modal-project-details').html(details);
+
+        $('.cycle2-slide-show').cycle();
     });
 
     $('.modal-close').click(function(e) {
